@@ -4,14 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Random;
 
 import Exe.Ex4.*;
 import Exe.Ex4.geo.*;
 import Exe.Ex4.gui.Ex4;
-import Exe.Ex4.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +25,7 @@ class Ex4Test {
 	{
 		ShapeCollection shapes = new ShapeCollection();
 		Random r = new Random();
-		for (int i = 0; i < 1 + r.nextInt(50); i++) 
+		for (int i = 0; i < 1 + r.nextInt(50); i++)
 		{
 			Rect2D rect = new Rect2D(RandomPoint2D(),RandomPoint2D(),RandomPoint2D(),RandomPoint2D());
 			Segment2D seg = new Segment2D(RandomPoint2D(),RandomPoint2D());
@@ -50,38 +47,38 @@ class Ex4Test {
 		Random rand = new Random();
 		switch (rand.nextInt(5))
 		{
-		case 0:
-		{
-			Rect2D rect = new Rect2D(RandomPoint2D(),RandomPoint2D(),RandomPoint2D(),RandomPoint2D());
-			GUI_Shapeable g1 = new GUIShape(rect, rand.nextBoolean(), Color.black, 3);
-			return g1;
-		}
-		case 2:
-		{
-			Segment2D seg = new Segment2D(RandomPoint2D(),RandomPoint2D());
-			GUI_Shapeable g2 = new GUIShape(seg,  rand.nextBoolean(), Color.black, 3);
-			return g2;
-		}
-		case 3:
-		{
-			Triangle2D tri = new Triangle2D(RandomPoint2D(),RandomPoint2D(),RandomPoint2D());
-			GUI_Shapeable g3 = new GUIShape(tri,  rand.nextBoolean(), Color.black, 3);
-			return g3;
-		}
-		case 1:
-		{
-			Circle2D circle = new Circle2D(RandomPoint2D(), rand.nextInt(1,Integer.MAX_VALUE));
-			GUI_Shapeable g4 = new GUIShape(circle,  rand.nextBoolean(), Color.black, 3);
-			return g4;
-		}
-		case 4:
-			ArrayList<Point2D> arr = new ArrayList<>();
-			for (int i = 0; i < rand.nextInt(5, 500); i++) {
-				arr.add(RandomPoint2D());
+			case 0:
+			{
+				Rect2D rect = new Rect2D(RandomPoint2D(),RandomPoint2D(),RandomPoint2D(),RandomPoint2D());
+				GUI_Shapeable g1 = new GUIShape(rect, rand.nextBoolean(), Color.black, 3);
+				return g1;
 			}
-			Polygon2D poly = new Polygon2D(arr);
-			GUI_Shapeable g5 = new GUIShape(poly,  rand.nextBoolean(), Color.black, 3);
-			return g5;
+			case 2:
+			{
+				Segment2D seg = new Segment2D(RandomPoint2D(),RandomPoint2D());
+				GUI_Shapeable g2 = new GUIShape(seg,  rand.nextBoolean(), Color.black, 3);
+				return g2;
+			}
+			case 3:
+			{
+				Triangle2D tri = new Triangle2D(RandomPoint2D(),RandomPoint2D(),RandomPoint2D());
+				GUI_Shapeable g3 = new GUIShape(tri,  rand.nextBoolean(), Color.black, 3);
+				return g3;
+			}
+			case 1:
+			{
+				Circle2D circle = new Circle2D(RandomPoint2D(), rand.nextInt(1,Integer.MAX_VALUE));
+				GUI_Shapeable g4 = new GUIShape(circle,  rand.nextBoolean(), Color.black, 3);
+				return g4;
+			}
+			case 4:
+				ArrayList<Point2D> arr = new ArrayList<>();
+				for (int i = 0; i < rand.nextInt(5, 500); i++) {
+					arr.add(RandomPoint2D());
+				}
+				Polygon2D poly = new Polygon2D(arr);
+				GUI_Shapeable g5 = new GUIShape(poly,  rand.nextBoolean(), Color.black, 3);
+				return g5;
 
 		}
 		return null;
@@ -164,7 +161,7 @@ class Ex4Test {
 		}
 	}
 	@Test
-	void testSelectClear() 
+	void testSelectClear()
 	{
 		for (int j = 0; j < 50; j++) {
 			Ex4 e = Ex4.getInstance();
@@ -178,7 +175,7 @@ class Ex4Test {
 		}
 	}
 	@Test
-	void testSelectAnti() 
+	void testSelectAnti()
 	{
 		for (int j = 0; j < 20; j++) {
 			Ex4 e = Ex4.getInstance();
@@ -191,13 +188,13 @@ class Ex4Test {
 				GUI_Shapeable g = s.get(i);
 				g.setSelected(true);
 			}
-			for (int i = 0; i < s.size(); i=i+2) 
+			for (int i = 0; i < s.size(); i=i+2)
 			{
 				GUI_Shapeable g = s.get(i);
 				g.setSelected(false);
 			}
 			e.actionPerformed("Anti");
-			for (int i = 0; i < s.size(); i++) 
+			for (int i = 0; i < s.size(); i++)
 			{
 				GUI_Shapeable g = s.get(i);
 				if(i%2==0)
@@ -213,7 +210,7 @@ class Ex4Test {
 	}
 
 	@Test
-	void testSelectRemove() 
+	void testSelectRemove()
 	{
 		for (int j = 0; j < 20; j++) {
 			Ex4 e = Ex4.getInstance();
@@ -227,7 +224,7 @@ class Ex4Test {
 				GUI_Shapeable g = s.get(i);
 				g.setSelected(true);
 			}
-			for (int i = 0; i < s.size(); i=i+2) 
+			for (int i = 0; i < s.size(); i=i+2)
 			{
 				GUI_Shapeable g = s.get(i);
 				g.setSelected(false);
@@ -237,7 +234,7 @@ class Ex4Test {
 		}
 	}
 	@Test
-	void testSorts() 
+	void testSorts()
 	{
 		for (int j = 0; j < 10; j++) {
 			Ex4 e = Ex4.getInstance();

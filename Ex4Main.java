@@ -6,7 +6,6 @@ import Exe.Ex4.geo.Point2D;
 import Exe.Ex4.gui.Ex4;
 /**
  * A very simple main class for basic code for Ex4
- * 
  * t2: output:
  * GUIShape,0,true,1,Circle2D,3.0,4.0, 2.0
  * GUIShape,255,false,2,Circle2D,6.0,8.0, 4.0
